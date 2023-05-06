@@ -23,21 +23,18 @@ struct ContentView: View {
                     .padding(.horizontal)
                 List{
                     ForEach(foods){ food in
-                        NavigationLink(destination: Text("\(food.calories)")) {
-                            
+                        NavigationLink(destination: Text("\(Int(food.calories))")) {
                             HStack{
                                 VStack(alignment: .leading, spacing: 6){
                                     Text(food.name!)
                                         .bold()
                                     Text("\(Int(food.calories))") + Text(" Calories")
                                         .foregroundColor(.red)
-                                    
-                                    Spacer()
-                                    Text(calTimeSince(date: food.date!))
-                                        .foregroundColor(.gray)
-                                        .italic()
-                                    
                                 }
+                                Spacer()
+                                Text(calTimeSince(date: food.date!))
+                                    .foregroundColor(.gray)
+                                    .italic()
                             }
                         }
                     }
@@ -66,11 +63,22 @@ struct ContentView: View {
         .navigationViewStyle(.stack)
     }
     
-    private func deletFood(item:IndexSet){
+    private func deletFood(offsets:IndexSet){
+        withAnimation {
+            offsets.map{foods[$0]}.forEach(context.delete)
             
+            DataController().save(context: context)
+        }
     }
     private func totalCaloriesToday() -> Double{
-        return 0.0
+        var caloriesToday = 0.0
+        for itemFood in foods{
+            if Calendar.current.isDateInToday(itemFood.date!) {
+                caloriesToday += itemFood.calories
+            }
+        }
+        
+        return caloriesToday
     }
     
 }
