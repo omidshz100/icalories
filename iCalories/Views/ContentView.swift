@@ -46,8 +46,24 @@ struct ContentView: View {
                 .listStyle(.plain)
             }
             .navigationTitle("iCalories")
-            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button{
+                        showingAddView.toggle()
+                    }label: {
+                        Label("Add food", systemImage: "plus.circle")
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
+            }
+            .sheet(isPresented: $showingAddView) {
+                AddFoodView()
+            }
         }
+        .navigationViewStyle(.stack)
     }
     
     private func deletFood(item:IndexSet){
