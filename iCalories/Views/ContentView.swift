@@ -29,7 +29,7 @@ struct ContentView: View {
                                 VStack(alignment: .leading, spacing: 6){
                                     Text(food.name!)
                                         .bold()
-                                    Text("\(food.calories)") + Text("Calories")
+                                    Text("\(Int(food.calories))") + Text(" Calories")
                                         .foregroundColor(.red)
                                     
                                     Spacer()
