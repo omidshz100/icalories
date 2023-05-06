@@ -33,18 +33,26 @@ struct ContentView: View {
                                         .foregroundColor(.red)
                                     
                                     Spacer()
-                                    Text("")
+                                    Text(calTimeSince(date: food.date!))
+                                        .foregroundColor(.gray)
+                                        .italic()
+                                    
                                 }
                             }
                         }
                     }
+                    .onDelete(perform: deletFood)
                 }
+                .listStyle(.plain)
             }
             .navigationTitle("iCalories")
+            
         }
     }
     
-    
+    private func deletFood(item:IndexSet){
+            
+    }
     private func totalCaloriesToday() -> Double{
         return 0.0
     }
