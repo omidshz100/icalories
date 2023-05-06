@@ -15,6 +15,7 @@
 		D9A02AD82A06A73E002D8B47 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A02AD72A06A73E002D8B47 /* DataController.swift */; };
 		D9A02ADE2A06AEF0002D8B47 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A02ADD2A06AEF0002D8B47 /* AddFoodView.swift */; };
 		D9A02AE02A06B360002D8B47 /* TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A02ADF2A06B360002D8B47 /* TimeFormatting.swift */; };
+		D9A02AE22A06C9CD002D8B47 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A02AE12A06C9CD002D8B47 /* EditFoodView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D9A02AD72A06A73E002D8B47 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D9A02ADD2A06AEF0002D8B47 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		D9A02ADF2A06B360002D8B47 /* TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatting.swift; sourceTree = "<group>"; };
+		D9A02AE12A06C9CD002D8B47 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				D9A02AC72A06A4B2002D8B47 /* ContentView.swift */,
 				D9A02ADD2A06AEF0002D8B47 /* AddFoodView.swift */,
+				D9A02AE12A06C9CD002D8B47 /* EditFoodView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				D9A02AC82A06A4B2002D8B47 /* ContentView.swift in Sources */,
 				D9A02AD82A06A73E002D8B47 /* DataController.swift in Sources */,
 				D9A02AC62A06A4B2002D8B47 /* iCaloriesApp.swift in Sources */,
+				D9A02AE22A06C9CD002D8B47 /* EditFoodView.swift in Sources */,
 				D9A02AD62A06A681002D8B47 /* FoodModel.xcdatamodeld in Sources */,
 				D9A02AE02A06B360002D8B47 /* TimeFormatting.swift in Sources */,
 			);
