@@ -6,17 +6,49 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
+    @Environment (\.managedObjectContext) var context
+    @FetchRequest(sortDescriptors:[SortDescriptor(\.date, order:.reverse)]) var foods:FetchedResults<Food>
+    
+    @State private var showingAddView = false
+    
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            VStack(alignment: .leading){
+                Text("\(Int(totalCaloriesToday())) kcal (Today)")
+                    .foregroundColor(.gray)
+                    .padding(.horizontal)
+                List{
+                    ForEach(foods){ food in
+                        NavigationLink(destination: Text("\(food.calories)")) {
+                            
+                            HStack{
+                                VStack(alignment: .leading, spacing: 6){
+                                    Text(food.name!)
+                                        .bold()
+                                    Text("\(food.calories)") + Text("Calories")
+                                        .foregroundColor(.red)
+                                    
+                                    Spacer()
+                                    Text("")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("iCalories")
         }
-        .padding()
     }
+    
+    
+    private func totalCaloriesToday() -> Double{
+        return 0.0
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
