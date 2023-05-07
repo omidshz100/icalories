@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-
+// this struct was writen by my-self
 struct DConstants{
     static let persistentName:String = "FoodModel"
     private init(){}
